@@ -15,7 +15,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///db.sqlite'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
-
 # mongo = PyMongo(app)
 
 # client = MongoClient(uri)
@@ -49,7 +48,6 @@ def home():
     todo_list = db.session.query(Todo).all()
     # return "Hello, World!"
     return render_template("base.html", todo_list=todo_list)
-
 
 # @app.route("/add", methods=["POST"])
 @app.post("/add")
